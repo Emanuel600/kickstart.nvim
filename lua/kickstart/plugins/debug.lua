@@ -144,5 +144,11 @@ return {
         detached = vim.fn.has 'win32' == 0,
       },
     }
+    -- C/C++/Rust (GDB)
+    dap.adapters.gdb = {
+      type = 'executable',
+      command = 'gdb',
+      args = { '--interpreter=dap', '--eval-command', 'set print pretty on' },
+    }
   end,
 }
